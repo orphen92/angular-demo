@@ -1,0 +1,19 @@
+/*
+  Global style for button
+
+*/
+
+.app-button {
+  padding: .8rem 2rem;
+  background: transparent;
+  border-radius: 2.5rem;
+  border: .2rem solid $primary;
+  transition: .25s;
+  margin: 0 .4rem;
+
+  &:hover, &:focus {
+    background: $primary;
+    border: .2rem solid $primary;
+    color: $on-primary;
+  }
+}

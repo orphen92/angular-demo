@@ -16,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Build on Github Gitbash
 
-Run ng build --output-path docs --base-href &#x2f;directory/
+Run npm run build:prod
 
 Run git add .
 
