@@ -2,8 +2,8 @@
   Layout of page
 
 */
-
 .app-page {
-  max-width: 90rem;
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }

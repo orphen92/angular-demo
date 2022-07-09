@@ -1,0 +1,20 @@
+@import "../../../styles/colors.scss";
+section {
+  padding: .8rem 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  background-color: $base-light;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+  height: 6.4rem;
+
+  &__navigation {
+    margin-right: 1rem;
+  }
+}

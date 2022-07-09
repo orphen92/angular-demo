@@ -8,7 +8,6 @@
 @import "layout";
 @import "vendor";
 
-
 html,
 body {
   height: 100%;
@@ -18,6 +17,7 @@ body {
   line-height: $base-line-height;
   background: $base;
   color: $on-base;
+
 }
 body {
   font-size: $base-font-size;
