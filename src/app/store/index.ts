@@ -1,12 +1,12 @@
 import { ActionReducerMap } from "@ngrx/store";
-import * as fromGlobal from "./global";
+import * as fromNavigation from "./navigation";
 
 export interface State {
-  globalState: fromGlobal.GlobalState;
+  globalState: fromNavigation.NavigationState;
 }
 
 export const reducers: ActionReducerMap<State, null> = {
-  globalState: fromGlobal.reducer
+  globalState: fromNavigation.reducer
 }
 
 export const effects: Array<any> = []
