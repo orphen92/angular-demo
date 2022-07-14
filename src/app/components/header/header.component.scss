@@ -16,5 +16,8 @@ section {
 
   &__navigation {
     margin-right: 1rem;
+    button {
+      transform: rotate(180deg);
+    }
   }
 }

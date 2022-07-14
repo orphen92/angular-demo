@@ -5,9 +5,11 @@
       </a>
   </section>
   <section class="header__navigation">
-    <button class="button-clear">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+    <button class="button-clear" (click)="toggleMenu()">
+      <mat-icon [innerText]="(menuState$ | async) ? 'menu_open' : 'menu'"></mat-icon>
     </button>
   </section>
 </div>
+
+
 

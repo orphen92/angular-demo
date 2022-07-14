@@ -34,6 +34,10 @@ export function reducer (
     case fromAction.Types.LAST_URL: {
       return {...state, entities: action.payload }
     }
+
+    default: {
+      return state;
+    }
   }
 
 

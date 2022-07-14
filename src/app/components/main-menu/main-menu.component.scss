@@ -1,0 +1,19 @@
+.app-main-nav {
+  position: fixed;
+  width: 300px;
+  right: 0;
+  left: initial;
+  display: flex;
+  background: red;
+  z-index: 6;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition-property: transform;
+  backdrop-filter: none;
+  &-open {
+    transform: translateX(0);
+    left: initial;
+  }
+}

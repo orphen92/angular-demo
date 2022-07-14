@@ -3,12 +3,20 @@ import { NavigationState } from "./navigation.reducer";
 
 export const getNavigationState = createFeatureSelector<NavigationState>('navigation');
 
+const getNavigation = createSelector(
+  getNavigationState,
+  (state) => {
+    console.log('state: ', state);
+    return state.entities;
+  }
+)
+
 export const getLastUrl = createSelector(
   getNavigationState,
   (state) => state.entities.lastUrlVisited
 )
 
 export const getMenuState = createSelector(
-  getNavigationState,
-  (state) => state.entities.isNavOpen
+  getNavigation,
+  (state) => state.isNavOpen
 )

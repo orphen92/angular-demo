@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import * as fromRoot from './store'
 import * as fromNavigation from './store/navigation'
 
@@ -9,12 +10,16 @@ import * as fromNavigation from './store/navigation'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Angular-demo';
-
+  menuState$: Observable<boolean>;
   constructor(
     private store: Store<fromRoot.State>
   ) {
+  }
+
+  ngOnInit(): void {
+    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
   }
 
   openNav(){

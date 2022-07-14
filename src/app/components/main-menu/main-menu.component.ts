@@ -1,17 +1,15 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-/**State */
+
 import * as fromRoot from '@app/store'
 import * as fromNavigation from '@app/store/navigation'
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-main-menu',
+  templateUrl: './main-menu.component.html',
+  styleUrls: ['./main-menu.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
+export class MainMenuComponent implements OnInit {
   menuState$: Observable<boolean>;
   constructor(
     private store: Store<fromRoot.State>
@@ -21,7 +19,4 @@ export class HeaderComponent implements OnInit {
     this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
   }
 
-  toggleMenu(){
-    this.store.dispatch(new fromNavigation.NavToggle);
-  }
 }
