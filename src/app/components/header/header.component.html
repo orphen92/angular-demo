@@ -4,12 +4,23 @@
         Angular demo
       </a>
   </section>
+
+  <section class="header__categories">
+    <nav>
+      <ol class="header__categories__nav">
+        <li #link class="header__categories__navitem" (mouseover)="moveMarker($event)" *ngFor="let categorie of categoriesNav;">
+          <a class="categories-a" routerLink="{{categorie.link}}">{{categorie.name}}</a>
+        </li>
+      </ol>
+    </nav>
+    <div class="header__categories__mark" #marker></div>
+  </section>
+
   <section class="header__navigation">
     <button class="button-clear" (click)="toggleMenu()">
-      <mat-icon [innerText]="(menuState$ | async) ? 'menu_open' : 'menu'"></mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
   </section>
 </div>
 
-
-
+<app-main-menu></app-main-menu>

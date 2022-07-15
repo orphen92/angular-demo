@@ -18,3 +18,21 @@
   }
 
 }
+
+.categories-a {
+  padding: 4px 8px;
+  text-decoration: none;
+  transition: .25s;
+  font-size: 1.4rem;
+  color: $on-base;
+  font-weight: 600;
+  text-transform: uppercase;
+  &:hover {
+    color: $primary-dark;
+  }
+
+  &_active {
+    color: $primary-dark;
+  }
+
+}

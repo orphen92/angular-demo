@@ -1,4 +1,4 @@
-@import "../../../styles/colors.scss";
+@import 'styles/colors';
 section {
   padding: .8rem 1.2rem;
   display: flex;
@@ -13,11 +13,28 @@ section {
   width: 100%;
   z-index: 4;
   height: 6.4rem;
-  background: green;
+  background: $base-light;
+
   &__navigation {
     margin-right: 1rem;
     button {
       transform: rotate(180deg);
+    }
+  }
+
+  &__categories {
+    position: relative;
+    padding: 0;
+    &__mark {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      background: $primary-dark;
+      height: 2px;
+      width: 100%;
+    }
+    &__nav {
+      display: flex;
     }
   }
 }

@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 /**State */
 import * as fromRoot from '@app/store'
 import * as fromNavigation from '@app/store/navigation'
@@ -8,20 +7,44 @@ import * as fromNavigation from '@app/store/navigation'
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
+  public categoriesNav = [
+    {
+      name: 'Angular Stuff',
+      link: '#'
+    },
+    {
+      name: 'Dev Projects',
+      link: '#'
+    },
+    {
+      name: 'Algo Resolutions',
+      link: '#'
+    },
+  ]
 
-  menuState$: Observable<boolean>;
+  @ViewChild('marker') marker: ElementRef;
+  @ViewChild('link') link: ElementRef;
   constructor(
     private store: Store<fromRoot.State>
   ) { }
 
   ngOnInit(): void {
-    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
+    console.log(this.link);
+
   }
 
   toggleMenu(){
     this.store.dispatch(new fromNavigation.NavToggle);
+  }
+
+  moveMarker(elem: any): void {
+    let linkWidth = elem.srcElement.offsetWidth;
+    let LinkPosition = elem.srcElement.offsetLeft;
+
+    this.marker.nativeElement.style.width = linkWidth - 20 + 'px';
+    this.marker.nativeElement.style.left = LinkPosition + 8 + 'px';
   }
 }

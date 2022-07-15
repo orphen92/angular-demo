@@ -1,10 +1,11 @@
+@import 'styles/colors';
 .app-main-nav {
   position: fixed;
   width: 300px;
   right: 0;
   left: initial;
   display: flex;
-  background: red;
+  background: $base;
   z-index: 6;
   flex-direction: column;
   height: 100%;
@@ -16,4 +17,24 @@
     transform: translateX(0);
     left: initial;
   }
+}
+
+.tds-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+  pointer-events: inherit;
+  block-size: 100%;
+  inline-size: 100%;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  transition: background-color .5s ease;
+  transition: background-color .5s ease,backdrop-filter .5s ease;
+  z-index: 3;
+}
+.tds-modal-backdrop-open {
+  background-color: rgba(0, 0, 0, .3);
+  backdrop-filter: blur(4px);
+  z-index: 5;
 }

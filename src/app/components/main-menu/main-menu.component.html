@@ -1,5 +1,12 @@
 <nav class="app-main-nav" [class.app-main-nav-open]="menuState$ | async">
+  <button class="button-clear" (click)="closeMenu()">
+    <mat-icon>closeMenu</mat-icon>
+  </button>
   <div>
     Coucou les amis
   </div>
 </nav>
+
+<div class="tds-modal-backdrop" (click)="closeMenu()" [class.tds-modal-backdrop-open]="menuState$ | async">
+
+</div>

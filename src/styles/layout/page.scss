@@ -7,19 +7,6 @@
   flex-direction: column;
   min-height: 100%;
   padding-top: 64px;
-  &.app-menu-open {
-    &:after {
-      content: '';
-      backdrop-filter: blur(1rem);
-      position: fixed;
-      top:0;
-      left: 0;
-      height: 100%;
-      /*possible fix Full width - menu width*/
-      width: 100%;
-      z-index: 2;
-    }
-  }
 }
 .app-wrapper {
   display: flex;

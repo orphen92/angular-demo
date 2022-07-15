@@ -19,4 +19,7 @@ export class MainMenuComponent implements OnInit {
     this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
   }
 
+  closeMenu(): void {
+    this.store.dispatch(new fromNavigation.NavClose);
+  }
 }
