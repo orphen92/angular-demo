@@ -8,7 +8,7 @@
   <section class="header__categories">
     <nav>
       <ol class="header__categories__nav">
-        <li #link class="header__categories__navitem" (mouseover)="moveMarker($event)" *ngFor="let categorie of categoriesNav;">
+        <li #link class="header__categories__navitem" (mouseover)="moveMarker($event)" (mouseout)="resetMarkerPos()" routerLinkActive="header__categories__navitem-active" *ngFor="let categorie of categoriesNav;">
           <a class="categories-a" routerLink="{{categorie.link}}">{{categorie.name}}</a>
         </li>
       </ol>

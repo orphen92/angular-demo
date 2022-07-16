@@ -26,12 +26,14 @@ section {
     position: relative;
     padding: 0;
     &__mark {
+      display: none;
       position: absolute;
       bottom: 10px;
       left: 0;
       background: $primary-dark;
       height: 2px;
       width: 100%;
+      transition: all .35s ease-in-out;
     }
     &__nav {
       display: flex;
