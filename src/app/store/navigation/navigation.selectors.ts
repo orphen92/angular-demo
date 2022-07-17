@@ -11,9 +11,14 @@ const getNavigation = createSelector(
   }
 )
 
-export const getLastUrl = createSelector(
+export const getLoading = createSelector(
   getNavigationState,
-  (state) => state.entities.lastUrlVisited
+  (state) => state.loading
+)
+
+export const getLastUrl = createSelector(
+  getNavigation,
+  (state) => state.lastUrlVisited
 )
 
 export const getMenuState = createSelector(
@@ -26,7 +31,7 @@ export const getCategories = createSelector(
   (state) => state.currentCategory
 )
 
-export const getLoading = createSelector(
-  getNavigationState,
-  (state) => state.loading
+export const getSubCategories = createSelector(
+  getNavigation,
+  (state) => state.subCategories
 )

@@ -15,7 +15,9 @@
     </nav>
     <div class="header__categories__mark" #marker></div>
   </section>
-
+  <div>
+    {{categories$ | async | json}}
+  </div>
   <section class="header__navigation">
     <button class="button-clear" (click)="toggleMenu()">
       <mat-icon>menu</mat-icon>

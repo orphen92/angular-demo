@@ -16,7 +16,7 @@ export class MainMenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
+    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState));
   }
 
   closeMenu(): void {

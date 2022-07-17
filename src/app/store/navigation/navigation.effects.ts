@@ -23,7 +23,6 @@ export class NavigationEffects {
     switchMap(() =>  {
       return this.navigationService.getCategories().pipe(
         map(data => {
-          console.log('data: ', data);
           return new fromActions.ReadSuccess(data);
         })
       )
