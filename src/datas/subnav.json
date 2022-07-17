@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "id": "angular",
+      "title": "Angular stuff",
+      "url": "/angular",
+      "links":  [
+        {
+          "name": "Components",
+          "url": "#"
+        },
+        {
+          "name": "Directives",
+          "url": "#"
+        },
+        {
+          "name": "Services",
+          "url": "#"
+        },
+        {
+          "name": "Pipe",
+          "url": "#"
+        },
+        {
+          "name": "Other",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Dev Projects",
+      "url": "/projects",
+      "links":  [
+        {
+          "name": "Games",
+          "url": "#"
+        },
+        {
+          "name": "Tools",
+          "url": "#"
+        },
+        {
+          "name": "Other",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "id": "algo",
+      "title": "Algo Resolutions",
+      "url": "/algo",
+      "links":  [
+        {
+          "name": "Sum Minization",
+          "url": "#"
+        },
+        {
+          "name": "Adjacent Elements",
+          "url": "#"
+        },
+        {
+          "name": "Longest String",
+          "url": "#"
+        },
+        {
+          "name": "Increasing Sequence",
+          "url": "#"
+        },
+        {
+          "name": "Alphabetic Shift",
+          "url": "#"
+        },
+        {
+          "name": "Alphabet sub sequence",
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}

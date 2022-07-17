@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NavigationService } from './store/navigation/navigation.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatIconModule,
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
@@ -35,7 +38,9 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
     EffectsModule.forRoot(effects),
     StoreDevTools
   ],
-  providers: [],
+  providers: [
+    NavigationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

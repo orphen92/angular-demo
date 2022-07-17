@@ -1,8 +1,8 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 /**State */
-import * as fromRoot from '@app/store'
-import * as fromNavigation from '@app/store/navigation'
+import * as fromRoot from '@app/store';
+import * as fromNavigation from '@app/store/navigation';
 import { NavigationEnd, Event, Router } from '@angular/router';
 
 @Component({
@@ -43,12 +43,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       }
     })
   }
-  ngOnInit(): void {
-  }
 
-  private markerSize(width:number, left: number): void{
-    this.marker.nativeElement.style.width = width - 20 + 'px';
-    this.marker.nativeElement.style.left = left + 8 + 'px';
+  ngOnInit(): void {
+    this.store.dispatch(new fromNavigation.Read);
   }
 
   ngAfterViewInit(): void {
@@ -56,8 +53,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.marker.nativeElement.style.display = 'block';
   }
 
+  private markerSize(width:number, left: number): void{
+    this.marker.nativeElement.style.width = width - 20 + 'px';
+    this.marker.nativeElement.style.left = left + 8 + 'px';
+  }
+
+
+
   toggleMenu(){
     this.store.dispatch(new fromNavigation.NavToggle);
+
   }
 
   moveMarker(elem: any): void {

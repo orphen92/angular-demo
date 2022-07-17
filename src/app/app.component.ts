@@ -19,18 +19,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
-  }
-
-  openNav(){
-    this.store.dispatch(new fromNavigation.NavOpen);
-  }
-
-  closeNav(){
+    //initialise the nav status to close
     this.store.dispatch(new fromNavigation.NavClose);
-  }
-
-  toggleNav(){
-    this.store.dispatch(new fromNavigation.NavToggle);
+    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
   }
 }

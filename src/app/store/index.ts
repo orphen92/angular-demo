@@ -8,4 +8,6 @@ export const reducers: ActionReducerMap<State, null> = {
   navigation: fromNavigation.reducer
 }
 
-export const effects: Array<any> = []
+export const effects: Array<any> = [
+  fromNavigation.NavigationEffects
+]

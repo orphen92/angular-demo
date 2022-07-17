@@ -1,4 +1,8 @@
+import { Categories } from "@app/models/backend";
+
 export interface Navigation {
   isNavOpen: boolean,
-  lastUrlVisited: string;
+  currentCategory: string,
+  subcategories: Categories,
+  lastUrlVisited: string
 }

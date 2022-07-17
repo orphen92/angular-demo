@@ -20,3 +20,13 @@ export const getMenuState = createSelector(
   getNavigation,
   (state) => state.isNavOpen
 )
+
+export const getCategories = createSelector(
+  getNavigation,
+  (state) => state.currentCategory
+)
+
+export const getLoading = createSelector(
+  getNavigationState,
+  (state) => state.loading
+)
