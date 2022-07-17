@@ -1,4 +1,4 @@
-import { Categories } from "@app/models/backend";
+import { Category } from "@app/models/backend";
 import { Action } from "@ngrx/store";
 import { Navigation } from "./navigation.models";
 
@@ -40,7 +40,7 @@ export class Read implements Action {
 
 export class ReadSuccess implements Action {
   readonly type = Types.READ_SUCCESS;
-  constructor(public payload: Categories) {}
+  constructor(public payload: Array<Category>) {}
 }
 
 export class ReadError implements Action {

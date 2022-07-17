@@ -5,7 +5,7 @@ import * as fromRoot from '@app/store';
 import * as fromNavigation from '@app/store/navigation';
 import { NavigationEnd, Event, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Categories } from '@app/models/backend';
+import { Category } from '@app/models/backend';
 
 @Component({
   selector: 'app-header',
@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('marker') marker: ElementRef;
   @ViewChild('link') link: ElementRef;
-  categories$: Observable<Categories>;
+  categories$: Observable<Array<Category>>;
   constructor(
     private store: Store<fromRoot.State>,
     private router: Router,

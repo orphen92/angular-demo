@@ -1,7 +1,3 @@
-export interface Categories {
-  categories: Array<Category>
-}
-
 export interface Category {
   id: string,
   title: string,

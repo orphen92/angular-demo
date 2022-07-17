@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Categories } from "@app/models/backend";
+import { Category } from "@app/models/backend";
 import { Observable } from "rxjs";
 
 @Injectable()
@@ -10,7 +10,7 @@ export class NavigationService {
 
   }
 
-  getCategories(): Observable<Categories> {
-    return this.http.get<Categories>(this.url);
+  getCategories(): Observable<Array<Category>> {
+    return this.http.get<Array<Category>>(this.url);
   }
 }

@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Categories } from '@app/models/backend';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { map, switchMap, zip } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 
 import *  as fromActions from './navigation.actions';
-import { Navigation } from './navigation.models';
 import { NavigationService } from './navigation.service';
 
 type Action = fromActions.All;
@@ -23,6 +21,7 @@ export class NavigationEffects {
     switchMap(() =>  {
       return this.navigationService.getCategories().pipe(
         map(data => {
+          console.log('data from effect: ', data);
           return new fromActions.ReadSuccess(data);
         })
       )
