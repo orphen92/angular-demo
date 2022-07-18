@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '@app/store';
 import * as fromNavigation from '@app/store/navigation';
 import { NavigationEnd, Event, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Category } from '@app/models/backend';
 
 @Component({
@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('marker') marker: ElementRef;
   @ViewChild('link') link: ElementRef;
-  categories$: Observable<Array<Category>>;
+  categories$: Observable<any>;
   constructor(
     private store: Store<fromRoot.State>,
     private router: Router,

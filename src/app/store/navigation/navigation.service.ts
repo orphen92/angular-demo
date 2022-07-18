@@ -10,7 +10,7 @@ export class NavigationService {
 
   }
 
-  getCategories(): Observable<Array<Category>> {
-    return this.http.get<Array<Category>>(this.url);
+  getCategories(): Observable<Category> {
+    return this.http.get<Category>(this.url);
   }
 }

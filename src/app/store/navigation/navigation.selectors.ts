@@ -6,7 +6,6 @@ export const getNavigationState = createFeatureSelector<NavigationState>('naviga
 const getNavigation = createSelector(
   getNavigationState,
   (state) => {
-    console.log('state: ', state);
     return state.entities;
   }
 )
@@ -26,7 +25,7 @@ export const getMenuState = createSelector(
   (state) => state.isNavOpen
 )
 
-export const getCategories = createSelector(
+export const getCurrentcategories = createSelector(
   getNavigation,
   (state) => state.currentCategory
 )
