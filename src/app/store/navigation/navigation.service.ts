@@ -3,14 +3,13 @@ import { Injectable } from "@angular/core";
 import { Category } from "@app/models/backend";
 import { Observable } from "rxjs";
 
+const url = "datas/subnav.json";
+
 @Injectable()
 export class NavigationService {
-  url = "datas/subnav.json";
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {}
 
-  }
-
-  getCategories(): Observable<Category> {
-    return this.http.get<Category>(this.url);
+  getCategories(): Observable<Array<Category>> {
+    return this.http.get<Array<Category>>(url);
   }
 }

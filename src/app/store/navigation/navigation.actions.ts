@@ -40,7 +40,7 @@ export class Read implements Action {
 
 export class ReadSuccess implements Action {
   readonly type = Types.READ_SUCCESS;
-  constructor(public payload: Category) {}
+  constructor(public payload: Array<Category>) {}
 }
 
 export class ReadError implements Action {

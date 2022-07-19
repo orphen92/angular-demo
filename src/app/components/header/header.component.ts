@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('marker') marker: ElementRef;
   @ViewChild('link') link: ElementRef;
-  categories$: Observable<any>;
+  fullMenuCat$: Observable<any>;
   constructor(
     private store: Store<fromRoot.State>,
     private router: Router,
@@ -48,8 +48,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new fromNavigation.Read);
-    this.categories$ = this.store.pipe(select(fromNavigation.getSubCategories));
+    this.store.dispatch(new fromNavigation.Read )
+    this.fullMenuCat$ = this.store.pipe(select(fromNavigation.fullMenuCat));
   }
 
   ngAfterViewInit(): void {

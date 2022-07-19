@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -8,7 +8,8 @@ import * as fromNavigation from './store/navigation'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
   title = 'Angular-demo';
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     //initialise the nav status to close
     this.store.dispatch(new fromNavigation.NavClose);
-    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState))
+    this.menuState$ = this.store.pipe(select(fromNavigation.getMenuState));
   }
+
 }

@@ -6,6 +6,17 @@
   </section>
 
   <section class="header__categories">
+    <!--To test-->
+    <nav *ngIf="fullMenuCat$ | async  as fullMenuCat">
+      <ol class="header__categories__nav">
+        <li #link *ngFor="let menuCat of fullMenuCat" class="header__categories__navitem" (mouseover)="moveMarker($event)" (mouseout)="resetMarkerPos()" routerLinkActive="header__categories__navitem-active" >
+          tutu
+          <a class="categories-a" routerLink="{{menuCat.url}}">{{menuCat.title}}</a>
+        </li>
+      </ol>
+    </nav>
+
+    <!--To refacto-->
     <nav>
       <ol class="header__categories__nav">
         <li #link class="header__categories__navitem" (mouseover)="moveMarker($event)" (mouseout)="resetMarkerPos()" routerLinkActive="header__categories__navitem-active" *ngFor="let categorie of categoriesNav;">
@@ -16,7 +27,7 @@
     <div class="header__categories__mark" #marker></div>
   </section>
   <div>
-    {{categories$ | async | json}}
+
   </div>
   <section class="header__navigation">
     <button class="button-clear" (click)="toggleMenu()">
@@ -27,6 +38,4 @@
 
 <app-main-menu></app-main-menu>
 
-<div>
-  {{categories$ | async | json}}
-</div>
+

@@ -1,5 +1,5 @@
-{
-  "angular": {
+[
+  {
     "id": "angular",
     "title": "Angular stuff",
     "url": "/angular",
@@ -26,7 +26,7 @@
       }
     ]
   },
-  "projects": {
+  {
     "id": "projects",
     "title": "Dev Projects",
     "url": "/projects",
@@ -45,7 +45,7 @@
       }
     ]
   },
-  "algo": {
+  {
     "id": "algo",
     "title": "Algo Resolutions",
     "url": "/algo",
@@ -76,4 +76,7 @@
       }
     ]
   }
-}
+]
+
+
+

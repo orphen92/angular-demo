@@ -37,11 +37,11 @@ export function reducer (
     }
 
     case fromAction.Types.READ: {
-      return {...state, loading:true, error: null}
+      return {...state, loading:true}
     }
 
     case fromAction.Types.READ_SUCCESS: {
-      return {...state, entities:{...state.entities, subCategories: action.payload}, loading:false, error: null}
+      return {...state, entities:{...state.entities, menu: action.payload}, loading:false, error: null}
     }
 
     case fromAction.Types.READ_ERROR: {
