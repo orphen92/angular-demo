@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import * as fromRoot from '@app/store';
 import * as fromNavigation from '@app/store/navigation';
 import { NavigationEnd, Event, Router } from '@angular/router';
-import { delay, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Category } from '@app/models/backend';
 
 @Component({
