@@ -4,5 +4,4 @@ export interface Navigation {
   isNavOpen: boolean,
   currentCategory: string,
   menu: Array<Category>,
-  lastUrlVisited: string
 }

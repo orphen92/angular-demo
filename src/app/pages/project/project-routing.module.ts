@@ -5,7 +5,26 @@ import { ProjectComponent } from './project.component';
 const routes: Routes = [
   {
     path: '',
-    component: ProjectComponent
+    component: ProjectComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'games',
+        pathMatch: 'full'
+      },
+      {
+        path: 'games',
+        loadChildren: () => import('./pages/games/games.module').then( m => m.GamesModule)
+      },
+      {
+        path: 'tools',
+        loadChildren: () => import('./pages/tools/tools.module').then( m => m.ToolsModule)
+      },
+      {
+        path: 'other',
+        loadChildren: () => import('./pages/other/other.module').then( m => m.OtherModule)
+      }
+    ]
   }
 ];
 

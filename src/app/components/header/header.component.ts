@@ -1,37 +1,25 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 /**State */
 import * as fromRoot from '@app/store';
 import * as fromNavigation from '@app/store/navigation';
 import { NavigationEnd, Event, Router } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { delay, map, Observable } from 'rxjs';
 import { Category } from '@app/models/backend';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
-  public categoriesNav = [
-    {
-      name: 'Angular Stuff',
-      link: 'angular'
-    },
-    {
-      name: 'Dev Projects',
-      link: 'projects'
-    },
-    {
-      name: 'Algo Resolutions',
-      link: 'algo'
-    },
-  ]
+  public categoriesNav: Array<Category> = [];
 
   @ViewChild('marker') marker: ElementRef;
   @ViewChild('link') link: ElementRef;
+
   fullMenuCat$: Observable<any>;
+  fullMenu$: Observable<any>;
   constructor(
     private store: Store<fromRoot.State>,
     private router: Router,
@@ -48,13 +36,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new fromNavigation.Read )
     this.fullMenuCat$ = this.store.pipe(select(fromNavigation.fullMenuCat));
+    this.fullMenu$ = this.store.pipe(select(fromNavigation.getFullMenu));
+    this.fullMenuCat$.subscribe((data) => {
+      this.categoriesNav = data;
+    })
   }
 
   ngAfterViewInit(): void {
-    this.markerSize(this.link.nativeElement.offsetWidth, 0);
-    this.marker.nativeElement.style.display = 'block';
+      this.markerSize(this.link.nativeElement.offsetWidth, 0);
+      this.marker.nativeElement.style.display = 'block';
   }
 
   private markerSize(width:number, left: number): void{

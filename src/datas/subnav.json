@@ -6,23 +6,23 @@
     "links":  [
       {
         "name": "Components",
-        "url": "#"
+        "url": "/angular/components"
       },
       {
         "name": "Directives",
-        "url": "#"
+        "url": "/angular/directives"
       },
       {
         "name": "Services",
-        "url": "#"
+        "url": "/angular/services"
       },
       {
-        "name": "Pipe",
-        "url": "#"
+        "name": "Pipes",
+        "url": "/angular/pipes"
       },
       {
         "name": "Other",
-        "url": "#"
+        "url": "/angular/other"
       }
     ]
   },
@@ -33,15 +33,15 @@
     "links":  [
       {
         "name": "Games",
-        "url": "#"
+        "url": "/projects/games"
       },
       {
         "name": "Tools",
-        "url": "#"
+        "url": "/projects/tools"
       },
       {
         "name": "Other",
-        "url": "#"
+        "url": "/projects/other"
       }
     ]
   },
@@ -49,32 +49,7 @@
     "id": "algo",
     "title": "Algo Resolutions",
     "url": "/algo",
-    "links":  [
-      {
-        "name": "Sum Minization",
-        "url": "#"
-      },
-      {
-        "name": "Adjacent Elements",
-        "url": "#"
-      },
-      {
-        "name": "Longest String",
-        "url": "#"
-      },
-      {
-        "name": "Increasing Sequence",
-        "url": "#"
-      },
-      {
-        "name": "Alphabetic Shift",
-        "url": "#"
-      },
-      {
-        "name": "Alphabet sub sequence",
-        "url": "#"
-      }
-    ]
+    "links":  []
   }
 ]
 

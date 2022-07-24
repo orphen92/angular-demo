@@ -38,5 +38,12 @@ section {
     &__nav {
       display: flex;
     }
+    &__navitem {
+      &-active {
+        a {
+          color: $primary-dark;
+        }
+      }
+    }
   }
 }

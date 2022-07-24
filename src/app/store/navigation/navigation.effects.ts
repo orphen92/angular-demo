@@ -5,8 +5,6 @@ import { map, switchMap } from 'rxjs';
 import *  as fromActions from './navigation.actions';
 import { NavigationService } from './navigation.service';
 
-type Action = fromActions.All;
-
 @Injectable()
 export class NavigationEffects {
   constructor(

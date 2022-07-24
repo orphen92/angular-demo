@@ -10,7 +10,6 @@ export enum Types {
   READ = '[Subcategories] Read: start',
   READ_SUCCESS = '[Subcategories] Read: success',
   READ_ERROR = '[Subcategories] Read: error',
-  LAST_URL = '[Global] NAV: Last url'
 }
 
 export class NavOpen implements Action {
@@ -48,9 +47,4 @@ export class ReadError implements Action {
   constructor(public payload: string) {}
 }
 
-export class LastUrl implements Action {
-  readonly type = Types.LAST_URL;
-  constructor(public payload: Navigation) {}
-}
-
-export type All = NavOpen | NavClose | NavToggle | AddCategory | Read | ReadSuccess | ReadError | LastUrl;
+export type All = NavOpen | NavClose | NavToggle | AddCategory | Read | ReadSuccess | ReadError;

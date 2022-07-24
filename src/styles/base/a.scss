@@ -31,8 +31,19 @@
     color: $primary-dark;
   }
 
-  &_active {
+}
+
+.subcategories-a {
+  color: $secondary;
+  padding: 4px 8px;
+  text-decoration: none;
+  transition: .25s;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  &:hover {
     color: $primary-dark;
   }
-
 }
+
+

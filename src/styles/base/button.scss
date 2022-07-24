@@ -20,8 +20,12 @@
 
 .button-clear {
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border-radius: 0;
-  border: none;
+  border: .2rem solid transparent;
   margin: 0;
+  transition: .25s;
 }

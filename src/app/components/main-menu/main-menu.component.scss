@@ -1,40 +1,106 @@
 @import 'styles/colors';
-.app-main-nav {
-  position: fixed;
-  width: 300px;
+.submenu-header {
+  position: absolute;
+  top: 0;
+  left: 0;
   right: 0;
-  left: initial;
   display: flex;
-  background: $base;
-  z-index: 6;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  transform: translateX(100%);
-  transition-property: transform;
-  backdrop-filter: none;
+  justify-content: flex-end;
+  padding: 1.3rem 1.8rem 0 0;
+  .button-close {
+    border-radius: 50%;
+    padding: .5rem;
+    color: $on-base;
+    mat-icon {
+      transition: .25s;
+    }
+    &:hover {
+      border-color: $primary;
+      mat-icon {
+        color: $primary;
+      }
+    }
+  }
+}
+.app-main-nav {
+  background-color: $base;
+  width: 30rem;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 11;
+  transform: translateX(50%);
+  transition: opacity .5s cubic-bezier(0.5,0,0,0.75),transform .5s cubic-bezier(0.5,0,0,0.75),visibility 0s .5s;
   &-open {
+    opacity: 1;
+    visibility: visible;
     transform: translateX(0);
-    left: initial;
+    transition: opacity .5s cubic-bezier(0.5,0,0,0.75),transform .5s cubic-bezier(0.5,0,0,0.75),visibility 0s 0s;
   }
 }
 
 .tds-modal-backdrop {
-  background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(0);
-  pointer-events: inherit;
-  block-size: 100%;
-  inline-size: 100%;
+  background-color: rgba(0,0,0,0);
+  block-size: 120vh;
+  inline-size: 120vw;
   left: 50%;
   position: fixed;
   top: 50%;
+  -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  transition: background-color .5s ease;
   transition: background-color .5s ease,backdrop-filter .5s ease;
-  z-index: 3;
+  z-index: 10;
+  backdrop-filter: blur(0);
+  pointer-events: none;
 }
 .tds-modal-backdrop-open {
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0,0,0,0.3);
   backdrop-filter: blur(4px);
-  z-index: 5;
+  pointer-events: inherit;
+}
+
+.submenu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 9rem 3rem;
+  gap: 1rem;
+
+  li {
+    display: flex;
+    width: 100%;
+    &:before {
+      content: '';
+      display: block;
+      width: .2rem;
+      background: $base;
+    }
+    &:hover, &.submenu__list__link-active {
+      color: $primary-dark;
+      &:before {
+        background: $primary-dark;
+      }
+      .submenu__list__link {
+        margin-left: 1rem;
+        color: $primary-dark;
+      }
+    }
+    .submenu__list__link {
+        flex: 1;
+        padding: .5rem .5rem .5rem .5rem;
+        transition: background-color .33s, margin-left .33s  ease;
+    }
+  }
+}
+.submenu__nolink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

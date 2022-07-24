@@ -8,8 +8,12 @@ export interface NavigationState {
 }
 
 const initialState: NavigationState = {
-  entities: null,
-  loading: null,
+  entities: {
+    isNavOpen: null,
+    currentCategory: null,
+    menu: [],
+  },
+  loading: false,
   error: null
 }
 
@@ -46,10 +50,6 @@ export function reducer (
 
     case fromAction.Types.READ_ERROR: {
       return {...state, entities:null, loading:false, error: action.payload}
-    }
-
-    case fromAction.Types.LAST_URL: {
-      return {...state, entities: action.payload }
     }
 
     default: {

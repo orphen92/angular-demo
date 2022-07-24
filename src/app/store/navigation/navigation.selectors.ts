@@ -1,4 +1,3 @@
-import { Category } from "@app/models/backend";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { NavigationState } from "./navigation.reducer";
 
@@ -14,11 +13,6 @@ const getNavigation = createSelector(
 export const getLoading = createSelector(
   getNavigationState,
   (state) => state.loading
-)
-
-export const getLastUrl = createSelector(
-  getNavigation,
-  (state) => state.lastUrlVisited
 )
 
 export const getMenuState = createSelector(
@@ -47,12 +41,27 @@ export const getFullMenu = createSelector(
 /**
  * Get Arrays Of all Categories and submenu
  */
- export const fullMenuCat = createSelector(
+export const fullMenuCat = createSelector(
   getFullMenu,
   (categories) => {
-    categories.map((category) => {
+    return categories.map((category) => {
       return {title: category.title, url: category.url}
     })
   }
 )
 
+
+/**
+ * Get Arrays Of SUbmenu from current category
+ */
+ export const getSubMenu = createSelector(
+  getFullMenu,
+  getCurrentcategories,
+  (menus, category) => {
+    const menu = menus.find(menu => menu.id === category);
+    if(!menu) {
+      return null;
+    }
+    return menu.links;
+  }
+)
