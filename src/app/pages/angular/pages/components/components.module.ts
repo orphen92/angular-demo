@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ComponentsRoutingModule } from './components-routing.module';
 import { ComponentsComponent } from './components.component';
+import { CardListModule, CardModule } from '@app/shared';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ComponentsComponent } from './components.component';
   ],
   imports: [
     CommonModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
+    CardListModule,
   ]
 })
 export class ComponentsModule { }

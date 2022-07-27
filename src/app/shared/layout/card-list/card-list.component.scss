@@ -1,0 +1,24 @@
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  &__title {
+    padding: 2.5rem 4rem 0;
+    font-size: 2rem;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+  }
+  &__content {
+    min-height: calc(100vh - (3rem + 6.4rem + 5.5rem));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__card {
+    display: inline-block;
+    margin: 2rem;
+    vertical-align: top;
+    width: 28rem;
+  }
+}

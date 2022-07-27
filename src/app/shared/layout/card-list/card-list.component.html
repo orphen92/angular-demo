@@ -1,0 +1,19 @@
+<div class="card-list">
+  <div class="card-list__title" *ngIf="title">{{title}}</div>
+
+  <div class="card-list__content">
+    <ng-container *ngIf="cards.length > 0">
+      <a class="card-list__card" *ngFor="let card of cards" routerLink="{{card.url}}">
+        <card [title]="card.title" [img]="card.imgUrl">{{card.content}}</card>
+      </a>
+
+    </ng-container>
+
+    <div class="card-list__content-nodata" *ngIf="cards.length === 0">
+      There is no content fow now...
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,11 @@
+<a>
+  <div class="app-cards">
+    <div class="app-cards__img" [ngStyle]="{'background-image': 'url(' + img + ')'}"></div>
+    <div class="app-cards__title">
+      {{title}}
+    </div>
+    <div class="app-cards__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</a>
